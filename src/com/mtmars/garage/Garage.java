@@ -1,6 +1,7 @@
 package com.mtmars.garage;
 
 import com.mtmars.enums.Size;
+import com.mtmars.vehicles.AbstractVehicle;
 
 import java.util.ArrayList;
 
@@ -25,7 +26,7 @@ public class Garage {
         return floors;
     }
 
-    public void addVehicle(Vehicle vehicle){
+    public <T extends AbstractVehicle> void addVehicle(T vehicle){
 
         Boolean spaceFound = false;
 
@@ -34,8 +35,7 @@ public class Garage {
             for(int y = 0; y != floors.get(x).getSpaces().size(); y++){
 
                 Space currentSpace = floors.get(x).getSpaces().get(y);
-
-                if(floors.get(x).getSpaces().get(y).getSize().ordinal() >= vehicle.getSize().ordinal() && currentSpace.isUnoccupied()) {
+                if(currentSpace.getSize().ordinal() >= vehicle.getSize().ordinal() && Boolean.TRUE.equals(currentSpace.isUnoccupied())) {
                     floors.get(x).getSpaces().get(y).setVehicle(vehicle);
                     System.out.println(vehicle.getSize() + " Vehicle parked at floor " + x + " space " + y);
                     spaceFound = true;

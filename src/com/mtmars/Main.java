@@ -2,7 +2,10 @@ package com.mtmars;
 
 import com.mtmars.enums.Size;
 import com.mtmars.garage.Garage;
-import com.mtmars.garage.Vehicle;
+import com.mtmars.vehicles.AbstractVehicle;
+import com.mtmars.vehicles.Car;
+import com.mtmars.vehicles.Motorcycle;
+import com.mtmars.vehicles.Van;
 
 public class Main {
 
@@ -10,9 +13,9 @@ public class Main {
 
         Garage theGarage = new Garage(4);
 
-        Vehicle motorcycle = new Vehicle(Size.SMALL);
-        Vehicle car = new Vehicle(Size.MEDIUM);
-        Vehicle van = new Vehicle(Size.LARGE);
+        Car car = new Car();
+        Motorcycle motorcycle = new Motorcycle();
+        Van van = new Van();
 
         for(int i = 0; i != theGarage.getNumberOfFloors(); i++){
             theGarage.printSpacesBySizeCount(i);

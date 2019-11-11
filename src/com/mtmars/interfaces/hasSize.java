@@ -1,4 +1,4 @@
-package com.mtmars.garage;
+package com.mtmars.interfaces;
 
 import com.mtmars.enums.Size;
 

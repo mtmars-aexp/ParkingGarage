@@ -1,13 +1,15 @@
 package com.mtmars.garage;
 
 import com.mtmars.enums.Size;
+import com.mtmars.interfaces.hasSize;
+import com.mtmars.vehicles.AbstractVehicle;
 
 import java.util.Random;
 
 public class Space implements hasSize {
 
     private Size size;
-    private Vehicle vehicle;
+    private AbstractVehicle vehicle;
 
     public Space(){
 
@@ -19,7 +21,7 @@ public class Space implements hasSize {
         return size;
     }
 
-    public void setVehicle(Vehicle vehicle){
+    public void setVehicle(AbstractVehicle vehicle){
         this.vehicle = vehicle;
     }
 
